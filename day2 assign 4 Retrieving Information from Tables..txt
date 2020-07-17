@@ -25,3 +25,6 @@ select Rating,Cname from customers where City = "San Jose";
 #5
 
 select snum from salespeople;
+
+#6
+select distinct S.Snum from salespeople S, orders O where S.Snum=O.Snum;
