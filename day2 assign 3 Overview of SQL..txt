@@ -1,0 +1,13 @@
+Q1)Does ANSI recognize the data type DATE?
+
+->No We can't view the first 5 rows of a table because the data is stored in fragments in DB Server HD.
+
+--------------------------------------------------------------------
+
+Q2) Which subdivision of SQL is used to insert values in tables?
+
+->To insert data into table you can use normal INSERT command.
+OR Insert into command with select
+
+Example:
+Insert into table(col1,col2,col3..) select col1,col2,col3… from table2
