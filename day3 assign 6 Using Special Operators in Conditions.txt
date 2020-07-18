@@ -7,7 +7,9 @@ select * from orders where Odate between '1990-10-03' and '1990-10-04';
 
 
 #2
-select * from customers c,salespeople s where s.snum = 1001 or s.snum = 1004;
+
+select * from customers where Snum in
+( select Snum from salespeople where sname in ('peel', 'Motika'));
 
 
 
