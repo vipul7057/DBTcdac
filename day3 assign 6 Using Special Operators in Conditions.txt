@@ -1,0 +1,26 @@
+
+#1
+
+select * from orders where Odate = '1990-10-03' or Odate = '1990-10-04';
+select * from orders where Odate between '1990-10-03' and '1990-10-04';
+
+
+
+#2
+select * from customers c,salespeople s where s.snum = 1001 or s.snum = 1004;
+
+
+
+#3
+select * from customers;
+select * from customers where Cname >='A' and Cname <='G';
+
+
+
+#4
+select * from customers where Cname like 'C%';
+
+
+
+#5
+select * from orders where Amt = NULL;
