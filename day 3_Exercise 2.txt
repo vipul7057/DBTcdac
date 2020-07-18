@@ -21,7 +21,7 @@ Select Pname, Weight from Parts where Weight not between 10 and 15;
 
 5
 
-Select Pname from Parts where Pname like 'p%';
+Select Pname from Parts where Pname like 's%';
 
 -- 
 
@@ -33,4 +33,4 @@ Select * from Supplier where city like 'L%';
 
 7 
 
-Select * from projects where Jname like '__s%';
+Select * from projects where Jname like '__n%';
