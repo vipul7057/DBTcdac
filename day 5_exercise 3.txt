@@ -1,7 +1,9 @@
 #1
 
 
-select concat(upper(substr(Sname,1,1)),lower(substr(Sname,2))) as Name from SUPPLIER;
+select concat(upper(substr(Sname,1,1)),lower(substr(Sname,2))) as Name from 
+
+SUPPLIER;
 
 
 
@@ -45,3 +47,9 @@ SELECT sname, length(sname) length from supplier;
 
 select * from supplier;
 SELECT * from supplier where soundex(sname)=soundex('aruun');
+
+
+
+#10
+select DAY(2020/07/20) from dual;
+Select dayname(now());
