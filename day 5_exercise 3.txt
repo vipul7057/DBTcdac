@@ -1,0 +1,47 @@
+#1
+
+
+select concat(upper(substr(Sname,1,1)),lower(substr(Sname,2))) as Name from SUPPLIER;
+
+
+
+#2
+
+select upper(Sname) from supplier;
+
+
+
+#3
+
+select lower(Sname) from supplier;
+
+
+
+#4
+
+select lpad(Sname,25,' ') from supplier;
+
+
+
+#5
+
+select replace(Sname,'la','ro') from supplier;
+
+
+
+#6
+
+select replace(replace(Sname,'l','r'),'a','o') from supplier;
+
+
+
+#7
+
+SELECT sname, length(sname) length from supplier;
+
+
+
+#8
+
+select * from supplier;
+SELECT * from supplier where soundex(sname)=soundex('aruun');
