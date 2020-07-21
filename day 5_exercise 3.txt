@@ -48,6 +48,15 @@ SELECT sname, length(sname) length from supplier;
 select * from supplier;
 SELECT * from supplier where soundex(sname)=soundex('aruun');
 
+#9
+select * from supplier;
+select case 
+when status = 10 then 'Ten'
+when status = 20 then 'Twenty'
+when status = 30 then 'Thirty'
+else 'Others' 
+end  Result
+from supplier;
 
 
 #10
