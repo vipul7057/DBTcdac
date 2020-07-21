@@ -1,0 +1,34 @@
+#1
+
+select count(Onum) from orders where odate = '1990-10-03';
+
+
+
+#2
+
+
+select count(ifnull(city,0)) from customers;
+
+
+#3
+
+select min(amt) from orders group by Snum;
+
+
+
+#4
+
+select * from customers;
+select Cname from customers where Cname like 'G%' order by Cname asc;
+
+
+
+#5
+
+select Cnum,max(rating) from customers group by Cnum;
+
+
+
+#6
+
+select Snum,count(*) from orders group by Snum; 	
