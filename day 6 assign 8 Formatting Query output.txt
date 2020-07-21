@@ -1,0 +1,19 @@
+#1
+
+select Onum,Snum,amt * 0.12 as "12% of commission" from orders;
+
+
+
+#2
+
+select city "For the city" ,max(rating) "the highest rating is:" from customers group by city;
+
+
+
+#3
+
+select rating,cname,Cnum from customers order by rating desc;
+
+#
+4
+select Odate date ,sum(amt) "Total Orders" from orders group by Odate order by odate desc; 
