@@ -7,11 +7,11 @@ select * from orders where cnum =
 
 #2
 
-select rating,cname from customers
-where 
-cnum in( select cnum from orders where amt >
-(select round(avg(amt)) from orders));
-
+Select cname, rating, a.cnum
+from orders a, customers b
+where a.cnum = b.cnum
+group by a.cnum
+having count(a.cnum) >( select avg(cun) from ( select count(cnum) as cun from orders group by cnum) as temp);
 
 
 
