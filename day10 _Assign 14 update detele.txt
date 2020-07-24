@@ -1,0 +1,32 @@
+#1
+
+insert into salespeople (scity,sname,comm,snum)
+values('San Jose','Blanco',NULL,1100);
+
+
+
+
+#2
+
+delete from orders 
+where cnum = 
+(select cnum from customers
+where cname = 'Clemens');
+
+#3
+
+update customers set rating = (rating + 100)
+where rating in
+(select rating from customers 
+where City = 'Rome');
+
+
+
+#4
+
+update customers set snum  = 1004
+where cnum in
+(select cnum from customers
+where snum = 
+(select snum from salespeople
+where sname = 'serres'));
