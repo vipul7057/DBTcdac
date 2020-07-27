@@ -1,0 +1,15 @@
+#1
+
+create index in_order on orders(odate);
+
+
+
+#2
+
+alter table orders add primary key(onum);
+
+
+
+#3
+
+CREATE INDEX in_o ON orders(odate);
