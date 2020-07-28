@@ -29,10 +29,10 @@ group by sname;
 
 
 #4
-
-create view view_multiple
+create view view_multiple1
 as
-select cname,snum
-from customers
-group by snum
+select cname,customers.snum,salespeople.sname
+from customers,salespeople
+where salespeople.snum = customers.Snum
+group by customers.snum,sname
 having count(*) > 1;
