@@ -12,4 +12,4 @@ alter table orders add primary key(onum);
 
 #3
 
-CREATE INDEX in_o ON orders(odate);
+CREATE INDEX in_o ON orders(snum,odate);
