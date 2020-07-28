@@ -1,0 +1,38 @@
+#1
+
+
+create view view_cus_rating
+as
+select * from customers
+where rating = 
+(select max(rating) from customers);
+select * from view_cus_rating;
+
+
+
+#2
+
+create view scity_view
+as
+select scity, count(scity) from salespeople
+group by scity;
+
+
+
+#3
+
+select  sname,avg(onum) as 'avg',count(onum) as 'total orders'
+from salespeople,orders
+where salespeople.snum = orders.Snum
+group by sname;
+
+
+
+#4
+
+create view view_multiple
+as
+select cname,snum
+from customers
+group by snum
+having count(*) > 1;
