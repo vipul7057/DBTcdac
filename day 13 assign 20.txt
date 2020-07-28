@@ -1,0 +1,7 @@
+
+#2
+
+create view commission
+as
+select snum,comm from salespeople
+where comm between .10 and .20;
