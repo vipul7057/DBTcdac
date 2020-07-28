@@ -1,0 +1,22 @@
+-- 1 
+drop table CityOrders;
+create table Cityorders as 
+select Onum  , amt , Snum , Cnum , City
+from orderC natural join customers;
+
+alter TABLE cityorders add constraint Onum_fk foreign key (Onum) references orderC(Onum);
+
+--
+
+
+2
+ 
+CREATE TABLE IF NOT EXISTS orderC2(
+Onum INT(4),
+Amt FLOAT(7,2),
+Odate DATE,
+Cnum INT(4),
+Snum INT(4),
+prev int(4),
+foreign key(prev) references Cityorders(Onum)
+);
