@@ -1,0 +1,83 @@
+
+#1
+delimiter @
+create  procedure area()
+begin
+	declare l int(4);
+    declare w int(4);
+	declare peri int(10);
+    declare a int(10);
+    set l = 10;
+    set w = 5;
+    set peri = 2*(l+w);
+    set a = l*w;
+    insert into cal values(a,peri);
+end; @
+delimiter ;
+call area();
+select * from cal;
+
+#2------------------------  
+delimiter @
+create procedure val()
+begin
+	declare num int;
+    declare square int;
+    declare cu int;
+    set square = num * num;
+    set cu = num * num * num;
+    insert into temp values(square,cu);
+end; @
+delimiter ;
+
+
+
+#3----------------------
+delimiter @
+create procedure con()
+begin
+	declare ftoc int;
+    declare inC int;
+    declare ctof int;
+    declare inF int;
+    set ftoc = 10;
+    set inC = (ftoc - 32)*(5/9);
+    #---------
+    set ctof = 20;
+    set inF = 9/5*ctof+32;
+end;@
+delimiter ;
+
+#4----------------------------------
+
+#5
+
+delimiter @
+create procedure divby5(x int)
+Begin
+	declare num int ;
+    set num =  mod(x,5) ;
+    if num!= 0 then
+		insert into ans values('Not div by 5',x);
+    else
+		insert into ans values('Div by 5',x);
+	end if ;
+End; @
+delimiter ;
+call divby5(20);
+
+
+#6------------------
+delimiter @
+create procedure product(x int , y int )
+begin
+	declare pro int;
+    set pro = x * y;
+    if pro >=100 then
+		select pro,'greater than 100' from dual;
+	else
+		select 'product less than 100' from dual;
+	end if;
+end; @
+delimiter ;
+
