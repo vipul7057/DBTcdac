@@ -1,0 +1,32 @@
+#------------------assign 21--------------------
+#1
+grant update on customers to amit;
+
+#2
+grant select on customers to manoj with grant option;
+
+#3
+revoke insert on customers from ajita;
+
+#4
+create table val(
+	ename varchar(20),
+    rating int
+);
+drop table val;
+create view val_view
+as
+select rating from val where rating between 100 and 500;
+grant select,update on customers to abhijeet;
+
+
+#5
+create view cus_view
+as
+select * from customers where
+rating !=
+(select min(rating) from customers);
+
+grant all on cus_view to vikram;
+
+
