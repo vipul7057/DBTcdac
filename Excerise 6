@@ -1,0 +1,51 @@
+
+1
+select * from supplier
+where status = (select status from supplier 
+				where Sname = 'Clark');
+                
+2 
+select * from emp 
+where deptno = (select deptno from emp 
+				where ename = 'Miller');
+                
+ 3 
+select Pname from parts 
+where weight >Any 
+(select weight from parts where Color = 'Red');
+
+4 
+select jname from projects 
+where city in (select City from projects where City = 'Tape');
+
+5 
+ select Pname from parts where weight <Any 
+ (select weight from parts
+where Color = 'Green');
+
+6 
+select Sname from supplier ,SUPPLIER_PARTS_PROJECT
+where SUPPLIER_PARTS_PROJECT.`S#` = supplier .`S#` 
+and SUPPLIER_PARTS_PROJECT.Qty >Any (select max(Qty) 
+from (Select max(Qty) , 
+`S#` from SUPPLIER_PARTS_PROJECT
+group by `S#` ) as temp );
+
+7 
+select ename , min(sal) from emp
+group by ename 
+order by min(sal) 
+limit 1 ; 
+
+8 
+select Sname from supplier ,SUPPLIER_PARTS_PROJECT
+where SUPPLIER_PARTS_PROJECT.`S#` = supplier .`S#` 
+and SUPPLIER_PARTS_PROJECT.Qty = (select max(Qty) 
+from (Select max(Qty) , `S#` from SUPPLIER_PARTS_PROJECT
+group by `S#` order by max(Qty) desc limit 1  ) as temp );
+                                     
+9
+select dept.deptname , count(emp.ename) from emp , dept 
+where emp.deptno = dept.deptno
+group by dept.deptname
+order by count(emp.ename) desc limit 1 ;
